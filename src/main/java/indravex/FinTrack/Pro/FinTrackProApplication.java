@@ -10,4 +10,6 @@ public class FinTrackProApplication {
 		SpringApplication.run(FinTrackProApplication.class, args);
 	}
 
+
+
 }

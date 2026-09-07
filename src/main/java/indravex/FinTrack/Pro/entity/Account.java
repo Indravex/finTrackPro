@@ -1,5 +1,6 @@
 package indravex.FinTrack.Pro.entity;
 
+import indravex.FinTrack.Pro.CompanyManagement.entity.Company;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

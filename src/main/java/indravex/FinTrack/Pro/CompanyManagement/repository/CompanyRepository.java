@@ -1,6 +1,6 @@
-package indravex.FinTrack.Pro.Repository;
+package indravex.FinTrack.Pro.CompanyManagement.repository;
 
-import indravex.FinTrack.Pro.entity.Company;
+import indravex.FinTrack.Pro.CompanyManagement.entity.Company;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

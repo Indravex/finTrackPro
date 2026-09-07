@@ -1,9 +1,8 @@
-package indravex.FinTrack.Pro.service;
+package indravex.FinTrack.Pro.CompanyManagement.service;
 
-import indravex.FinTrack.Pro.Repository.CompanyRepository;
-import indravex.FinTrack.Pro.dto.CompanyRequest;
-import indravex.FinTrack.Pro.entity.Company;
-import lombok.AllArgsConstructor;
+import indravex.FinTrack.Pro.CompanyManagement.repository.CompanyRepository;
+import indravex.FinTrack.Pro.CompanyManagement.dto.CompanyRequest;
+import indravex.FinTrack.Pro.CompanyManagement.entity.Company;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -25,6 +24,9 @@ public class CompanyServiceImpl implements CompanyService{
 
         Company company = Company.builder()
                 .companyName(request.getCompanyName())
+                .accountType(request.getAccountType())
+                .contactPerson(request.getContactPerson())
+                .email(request.getEmail())
                 .status(true)
                 .createdAt(LocalDateTime.now())
                 .updatedAt(LocalDateTime.now())

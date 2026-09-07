@@ -1,7 +1,7 @@
-package indravex.FinTrack.Pro.service;
+package indravex.FinTrack.Pro.CompanyManagement.service;
 
-import indravex.FinTrack.Pro.dto.CompanyRequest;
-import indravex.FinTrack.Pro.entity.Company;
+import indravex.FinTrack.Pro.CompanyManagement.dto.CompanyRequest;
+import indravex.FinTrack.Pro.CompanyManagement.entity.Company;
 import jakarta.validation.Valid;
 
 import java.util.List;

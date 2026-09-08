@@ -1,12 +1,10 @@
-package indravex.FinTrack.Pro.entity;
+package indravex.FinTrack.Pro.CompanyManagement.entity;
 
+import indravex.FinTrack.Pro.entity.Account;
+import indravex.FinTrack.Pro.entity.Transaction;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.*;
 
@@ -16,14 +14,25 @@ import java.util.*;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class Company {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "company_name", nullable = false)
     private String companyName;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "account_type", nullable = false)
+    private AccountType accountType;
+
+    @Column(name = "contact_person")
+    private String contactPerson;
+
+    @Column(name = "email")
+    private String email;
 
     @Column(nullable = false)
     private boolean status;

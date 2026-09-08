@@ -1,7 +1,6 @@
 package indravex.FinTrack.Pro.CompanyManagement.entity;
 
 import indravex.FinTrack.Pro.entity.Account;
-import indravex.FinTrack.Pro.entity.Transaction;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -45,8 +44,5 @@ public class Company {
 
     @OneToMany(mappedBy = "company")
     private List<Account> accounts;
-
-    @OneToMany(mappedBy = "company")
-    private List<Transaction> transactions;
 
 }

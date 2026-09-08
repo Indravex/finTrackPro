@@ -1,5 +1,6 @@
 package indravex.FinTrack.Pro.entity;
 
+import indravex.FinTrack.Pro.TransactionManagement.entity.Transaction;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -25,7 +26,4 @@ public class ExpenseCategory {
 
     @Column(nullable = false)
     private Boolean active;
-
-    @OneToMany(mappedBy = "category")
-    private List<Transaction> transactions;
 }

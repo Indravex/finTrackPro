@@ -1,6 +1,7 @@
 package indravex.FinTrack.Pro.entity;
 
 import indravex.FinTrack.Pro.CompanyManagement.entity.Company;
+import indravex.FinTrack.Pro.TransactionManagement.entity.Transaction;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -47,7 +48,4 @@ public class Account {
 
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
-
-    @OneToMany(mappedBy = "account")
-    private List<Transaction> transactions;
 }

@@ -17,6 +17,9 @@ public class TransactionRequest {
     @NotNull(message = "Transaction type is required")
     private TransactionType transactionType;
 
+    @NotNull(message = "Account ID is required")
+    private Long accountId;
+
     @NotBlank(message = "Company name is required")
     private String companyName;
 

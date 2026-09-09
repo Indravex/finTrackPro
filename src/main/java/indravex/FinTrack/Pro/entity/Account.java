@@ -1,7 +1,6 @@
 package indravex.FinTrack.Pro.entity;
 
 import indravex.FinTrack.Pro.CompanyManagement.entity.Company;
-import indravex.FinTrack.Pro.TransactionManagement.entity.Transaction;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -10,7 +9,6 @@ import lombok.Setter;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Entity
 @Table(name = "accounts")

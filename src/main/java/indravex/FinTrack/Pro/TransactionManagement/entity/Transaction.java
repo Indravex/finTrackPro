@@ -1,5 +1,6 @@
 package indravex.FinTrack.Pro.TransactionManagement.entity;
 
+import indravex.FinTrack.Pro.entity.Account;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -19,6 +20,10 @@ public class Transaction {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @ManyToOne
+    @JoinColumn(name = "account_id", nullable = false)
+    private Account account;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "transaction_type", length = 20, nullable = false)

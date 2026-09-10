@@ -5,8 +5,8 @@ import indravex.FinTrack.Pro.DashboardManagement.dto.DashboardResponse;
 import indravex.FinTrack.Pro.DashboardManagement.dto.RecentTransactionResponse;
 import indravex.FinTrack.Pro.TransactionManagement.entity.Transaction;
 import indravex.FinTrack.Pro.TransactionManagement.entity.TransactionType;
-import indravex.FinTrack.Pro.entity.Account;
-import indravex.FinTrack.Pro.repository.AccountRepository;
+import indravex.FinTrack.Pro.AccountManagement.entity.Account;
+import indravex.FinTrack.Pro.AccountManagement.repository.AccountRepository;
 import indravex.FinTrack.Pro.TransactionManagement.repository.TransactionRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -55,7 +55,7 @@ public class DashboardServiceImpl implements DashboardService {
                 .map(account -> AccountSummary.builder()
                         .accountId(account.getId())
                         .accountName(account.getAccountName())
-                        .accountType(account.getAccountType())
+                        .accountType(account.getAccountType().name())
                         .currentBalance(account.getCurrentBalance())
                         .build())
                 .toList();

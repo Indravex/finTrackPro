@@ -20,6 +20,9 @@ public class TransactionRequest {
     @NotNull(message = "Account ID is required")
     private Long accountId;
 
+    @NotNull(message = "Company ID is required")
+    private Long companyId;
+
     @NotBlank(message = "Company name is required")
     private String companyName;
 

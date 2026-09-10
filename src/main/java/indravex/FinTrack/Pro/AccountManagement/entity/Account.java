@@ -1,16 +1,12 @@
-package indravex.FinTrack.Pro.entity;
+package indravex.FinTrack.Pro.AccountManagement.entity;
 
+import indravex.FinTrack.Pro.CompanyManagement.entity.AccountType;
 import indravex.FinTrack.Pro.CompanyManagement.entity.Company;
-import indravex.FinTrack.Pro.TransactionManagement.entity.Transaction;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Entity
 @Table(name = "accounts")
@@ -18,6 +14,7 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class Account {
 
     @Id
@@ -32,7 +29,8 @@ public class Account {
     private String accountName;
 
     @Column(name = "account_type")
-    private String accountType;
+    @Enumerated(EnumType.STRING)
+    private AccountType accountType;
 
     @Column(name = "opening_balance",precision = 15,scale = 2)
     private BigDecimal openingBalance;

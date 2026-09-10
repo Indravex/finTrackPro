@@ -1,6 +1,6 @@
 package indravex.FinTrack.Pro.CompanyManagement.entity;
 
-import indravex.FinTrack.Pro.entity.Account;
+import indravex.FinTrack.Pro.AccountManagement.entity.Account;
 import jakarta.persistence.*;
 import lombok.*;
 

@@ -1,6 +1,7 @@
 package indravex.FinTrack.Pro.TransactionManagement.controller;
 
 import indravex.FinTrack.Pro.TransactionManagement.dto.TransactionRequest;
+import indravex.FinTrack.Pro.TransactionManagement.dto.TransactionResponse;
 import indravex.FinTrack.Pro.TransactionManagement.entity.Transaction;
 import indravex.FinTrack.Pro.TransactionManagement.service.TransactionService;
 import indravex.FinTrack.Pro.utils.ApiResponse;
@@ -18,16 +19,30 @@ public class TransactionController {
     private final TransactionService transactionService;
 
     @PostMapping
-    public ResponseEntity<ApiResponse<Transaction>> createTransaction(
+    public ResponseEntity<ApiResponse<TransactionResponse>> createTransaction(
             @Valid @RequestBody TransactionRequest request) {
 
         Transaction transaction = transactionService.createTransaction(request);
 
-        ApiResponse<Transaction> response =
+        TransactionResponse transactionResponse = TransactionResponse.builder()
+                .transactionId(transaction.getId())
+                .transactionType(transaction.getTransactionType())
+                .accountId(transaction.getAccount().getId())
+                .companyId(transaction.getAccount().getCompany().getId())
+                .companyName(transaction.getCompanyName())
+                .paymentAmount(transaction.getPaymentAmount())
+                .date(transaction.getDate())
+                .paidTo(transaction.getPaidTo())
+                .expenseCategory(transaction.getExpenseCategory())
+                .amount(transaction.getAmount())
+                .remarkDescription(transaction.getRemarkDescription())
+                .build();
+
+        ApiResponse<TransactionResponse> response =
                 new ApiResponse<>(
                         true,
                         "Transaction created successfully",
-                        transaction
+                        transactionResponse
                 );
 
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
